@@ -58,8 +58,8 @@ console.log(`http server opened, port:${httpPORT}`);
 
 app.use((req, res, next)=>{
   let {method, params} = req.body;
-  // if(method && params && (cache.isCashed(params[0].data))){
-  if(method && params && (params.indexOf('latest') <= -1)){
+  if(method && params && (!cache.isNotCached(method, params))){
+  // if(method && params && (params.indexOf('latest') <= -1)){
     cache.redisGet(req,res,next);
   }else{next();}
 });

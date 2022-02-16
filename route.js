@@ -59,9 +59,9 @@ const processProxy = async (req, res) => {
   response = response
     ? response
     : { error: "Server maintenance, contact admin", data: "N/A" };
-
-    cache.redisSet(cache.genK(req), response.data);
-
+if(!cache.isNotCached(req.body.method, req.body.params)){
+  cache.redisSet(cache.genK(req), response.data);
+}
   //case: ws res=null
   res ? res.json(response.data) : null;
 

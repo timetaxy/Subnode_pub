@@ -3,7 +3,11 @@ const sms = require("./sms.js")
 const REDIS_PORT = 6379;
 const REDIS_EX = 86400 * 30;
 const redisClient = redis.createClient(REDIS_PORT);
-const signature = { "0x18160ddd":"totalSupply", "0xd4c3eea0":"totalValue" };
+const filter = {
+  signature : { "0x18160ddd":"totalSupply", "0xd4c3eea0":"totalValue" },
+  methods : ["eth_blockNumber"],
+  params : ["latest"]
+};
 
 redisClient.on("error", function (error) {
   console.error(`Redis Error: ${error}`);
@@ -44,5 +48,16 @@ const genK = (req)=>{
   console.log('key:',k);
   return k;
 };
-const isCashed = (x) => {return (x in signature)};
-module.exports= {init, redisGet, redisSet, genK, isCashed};
+const isNotCached = (method, params) => {
+// console.log(params[0] === undefined);
+// console.log(filter.methods.indexOf(method) > -1);
+// console.log(filter.params.indexOf(params[0]) > -1);
+// console.log(filter.params.indexOf(params[1]) > -1);
+// console.log(params[0].data && !(params[0].data in filter.signature));
+return (params[0] === undefined) ||
+        (filter.methods.indexOf(method) > -1) ||
+        (filter.params.indexOf(params[0]) > -1) ||
+        (filter.params.indexOf(params[1]) > -1)
+;
+};
+module.exports= {init, redisGet, redisSet, genK, isNotCached};
