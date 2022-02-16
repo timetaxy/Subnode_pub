@@ -1,0 +1,18 @@
+//c5.4xlarge > m6i.4xlarge
+//11.12 pm22:15
+t=2021-11-12T13:12:58+0000 lvl=warn msg="Sanitizing cache to Go's GC limits" provided=56320 updated=21096
+t=2021-11-12T13:12:58+0000 lvl=info msg="Enabling recording of key preimages since archive mode is used"
+t=2021-11-12T13:12:58+0000 lvl=info msg="Set global gas cap"                 cap=25,000,000
+t=2021-11-12T13:12:58+0000 lvl=info msg="Allocated trie memory caches"       clean="12.36 GiB" dirty="0.00 B"
+t=2021-11-12T13:12:58+0000 lvl=info msg="Allocated cache and file handles"   database=/bsc/node/geth/chaindata cache="8.24 GiB" handles=524,288
+t=2021-11-12T13:13:15+0000 lvl=info msg="Opened ancient database"            database=/bsc/node/geth/chaindata/ancient readonly=false
+t=2021-11-12T13:13:15+0000 lvl=info msg="Initialised chain configuration"    config="{ChainID: 56 Homestead: 0 DAO: <nil> DAOSupport: false EIP150: 0 EIP155: 0 EIP158: 0 Byzantium: 0 Constantinople: 0 Petersburg: 0 Istanbul: 0, Muir Glacier: 0, Ramanujan: 0, Niels: 0, MirrorSync: 5184000, Berlin: <nil>, YOLO v3: <nil>, Engine: parlia}"
+t=2021-11-12T13:13:18+0000 lvl=info msg="Unprotected transactions allowed"
+t=2021-11-12T13:13:18+0000 lvl=info msg="Initialising Ethereum protocol"     network=56 dbversion=8
+t=2021-11-12T13:13:18+0000 lvl=info msg="Loaded most recent local header"    number=12,584,778 hash=0x335eb8212e90aa2f4cc14d8733ea080a84b572411408350827837952a67a546e td=25,035,761 age=1h43m57s
+t=2021-11-12T13:13:18+0000 lvl=info msg="Loaded most recent local full block" number=12,584,778 hash=0x335eb8212e90aa2f4cc14d8733ea080a84b572411408350827837952a67a546e td=25,035,761 age=1h43m57s
+t=2021-11-12T13:13:18+0000 lvl=info msg="Loaded most recent local fast block" number=12,584,778 hash=0x335eb8212e90aa2f4cc14d8733ea080a84b572411408350827837952a67a546e td=25,035,761 age=1h43m57s
+t=2021-11-12T13:13:18+0000 lvl=info msg="Loaded last fast-sync pivot marker"  number=6,920,578
+t=2021-11-12T13:13:18+0000 lvl=warn msg="Switch sync mode from fast sync to full sync"
+
+/////////////////////////////
