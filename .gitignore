@@ -5,3 +5,4 @@ node_modules
 # .vscode
 # client.js
 env.js
+.vscode
